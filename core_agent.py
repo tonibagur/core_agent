@@ -7,14 +7,14 @@ import time
 import traceback
 import httplib2 
 import urllib 
-from firebase import firebase
+#from firebase import firebase
 
 class ConeptumNotifier:
-    fb = firebase.FirebaseApplication('https://irviasyncro.firebaseio.com', None)
+    #fb = firebase.FirebaseApplication('https://irviasyncro.firebaseio.com', None)
     
     def coneptum_notify2(self,a,v,val):
         data = {'last_ping': datetime.datetime.now()}
-        self.fb.patch('/agents/%s' %(a),data)
+        #self.fb.patch('/agents/%s' %(a),data)
 
     def coneptum_notify(self,agent,var,value):
         f = lambda:self.coneptum_notify2(agent,var,value)
@@ -22,7 +22,7 @@ class ConeptumNotifier:
 
     def notify_freq(self,a,freq):
         data = {'freq_seconds':freq,'name':a,'status':'OK'}
-        self.fb.patch('/agents/%s' %(a),data)
+        #self.fb.patch('/agents/%s' %(a),data)
 
 class ConeptumAgent(threading.Thread):
     agent_name='unknown'
