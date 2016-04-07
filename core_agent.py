@@ -97,3 +97,5 @@ class AgentRunner:
             exceptions=True
             self.agent.coneptum_notify('exception',exc)
         return exceptions
+if __name__=='__main__':
+    AgentRunner(ConeptumAgent,'INFINITE',INFINITE,pause_time=1,monitor_freq=0.1)
