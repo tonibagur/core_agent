@@ -12,13 +12,10 @@ import urllib
 class ConeptumNotifier:
     #fb = firebase.FirebaseApplication('https://irviasyncro.firebaseio.com', None)
     
-    def coneptum_notify2(self,a,v,val):
-        data = {'last_ping': datetime.datetime.now()}
-        #self.fb.patch('/agents/%s' %(a),data)
+
 
     def coneptum_notify(self,agent,var,value):
-        f = lambda:self.coneptum_notify2(agent,var,value)
-        threading.Thread(target=f).start()
+        #todo jessica code
 
     def notify_freq(self,a,freq):
         data = {'freq_seconds':freq,'name':a,'status':'OK'}
