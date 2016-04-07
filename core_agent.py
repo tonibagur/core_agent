@@ -7,15 +7,14 @@ import time
 import traceback
 import httplib2 
 import urllib 
+from notify_agent_state import run_parse_agents
 #from firebase import firebase
 
 class ConeptumNotifier:
-    #fb = firebase.FirebaseApplication('https://irviasyncro.firebaseio.com', None)
-    
-
+    #fb = firebase.FirebaseApplication('https://irviasyncro.firebaseio.com', None)  
 
     def coneptum_notify(self,agent,var,value):
-        #todo jessica code
+        run_parse_agents(agent)
 
     def notify_freq(self,a,freq):
         data = {'freq_seconds':freq,'name':a,'status':'OK'}
@@ -42,7 +41,6 @@ class ConeptumAgent(threading.Thread):
         pass
 
 INFINITE=10000000000
-
 
 def seconds(d):
     return d.seconds + d.days*86400
