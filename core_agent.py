@@ -14,7 +14,10 @@ class ConeptumNotifier:
     #fb = firebase.FirebaseApplication('https://irviasyncro.firebaseio.com', None)  
 
     def coneptum_notify(self,agent,var,value):
-        run_parse_agents(agent)
+        try:
+            run_parse_agents(agent)
+        except:
+            print "error reporting state"
 
     def notify_freq(self,a,freq):
         data = {'freq_seconds':freq,'name':a,'status':'OK'}
